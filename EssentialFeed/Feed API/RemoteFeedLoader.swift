@@ -63,7 +63,7 @@ private class FeedItemsMapper {
         return root.items.map { $0.item }
     }
     
-    private struct Root: Decodable {
+    struct Root: Decodable {
         
         let items: [Item]
         
