@@ -13,6 +13,7 @@ internal final class FeedItemsMapper {
     
     internal static func map(_ data: Data,
                              _ response: HTTPURLResponse) throws -> [FeedItem] {
+        
         guard response.statusCode == OK_200 else {
             throw RemoteFeedLoader.Error.invalidData
         }
