@@ -8,25 +8,21 @@
 import Foundation
 
 public protocol HTTPClient {
+    
+    typealias Completion = (Result<(Data, HTTPURLResponse), Error>) -> Void
+    
     func get(from url : URL,
-             completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
+             completion: @escaping Completion
+    )
 }
 
 public final class RemoteFeedLoader {
+    
     let url: URL
     let client: HTTPClient
     
-    public enum Error: Swift.Error {
-        case connectivity
-        case invalidData
-    }
-    
-    public enum Result: Equatable {
-        case success([FeedItem])
-        case failure(Error)
-    }
-    
-    public init(url: URL, client: HTTPClient) {
+    public init(url: URL,
+                client: HTTPClient) {
         
         self.url = url
         self.client = client
@@ -48,6 +44,16 @@ public final class RemoteFeedLoader {
             }
         }
     }
+    
+    public enum Error: Swift.Error {
+        case connectivity
+        case invalidData
+    }
+    
+    public enum Result: Equatable {
+        case success([FeedItem])
+        case failure(Error)
+    }
 }
 
 private class FeedItemsMapper {
@@ -56,7 +62,6 @@ private class FeedItemsMapper {
     
     static func map(_ data: Data,
                     _ response: HTTPURLResponse) throws -> [FeedItem] {
-        
         guard response.statusCode == OK_200 else {
             throw RemoteFeedLoader.Error.invalidData
         }
@@ -70,6 +75,7 @@ private class FeedItemsMapper {
     }
     
     private struct Item: Decodable {
+        
         let id: UUID
         let description: String?
         let location: String?

@@ -97,17 +97,20 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(url: URL = URL(string: "https://a-url.com")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
+    private typealias SUT = (sut: RemoteFeedLoader, client: HTTPClientSpy)
+    private typealias Item = (model: FeedItem, json: [String: Any])
+    
+    private func makeSUT(url: URL = URL(string: "https://a-url.com")!) -> SUT {
         let client = HTTPClientSpy()
         let sut = RemoteFeedLoader(url: url, client: client)
+        
         return (sut, client)
     }
     
     private func makeItem(id: UUID,
                           description: String? = nil,
                           location: String? = nil,
-                          imageURL: URL
-    ) -> (model: FeedItem, json: [String: Any]) {
+                          imageURL: URL) -> Item {
         
         let item = FeedItem(
             id: id,
@@ -116,16 +119,20 @@ class RemoteFeedLoaderTests: XCTestCase {
             imageURL: imageURL
         )
         
-        let json = [
-            "id": id.uuidString,
-            "description": description,
-            "location": location,
-            "image": imageURL.absoluteString
-        ].reduce(into: [String: Any]()) { acc, e in
-            if let value = e.value { acc[e.key] = value}
-        }
+        let minifiedJSON = {
+            let json = [
+                "id": id.uuidString,
+                "description": description,
+                "location": location,
+                "image": imageURL.absoluteString
+            ]
+            
+            return json.reduce(into: [String: Any]()) { acc, e in
+                if let value = e.value { acc[e.key] = value}
+            }
+        }()
         
-        return (item, json)
+        return (item, minifiedJSON)
     }
     
     private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
@@ -149,21 +156,28 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     private class HTTPClientSpy: HTTPClient {
         
-        private var messages = [(url: URL, completion: (Result<(Data, HTTPURLResponse), Error>) -> Void)]()
+        private var messages = [(url: URL, completion: Completion)]()
         
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
         
-        func get(from url : URL, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
+        func get(from url : URL,
+                 completion: @escaping Completion) {
+
             messages.append((url, completion))
         }
         
-        func complete(with error: Error, at index: Int = 0) {
+        func complete(with error: Error,
+                      at index: Int = 0) {
+            
             messages[index].completion(.failure(error))
         }
         
-        func complete(withStatusCode statusCode: Int, data: Data, at index: Int = 0) {
+        func complete(withStatusCode statusCode: Int,
+                      data: Data,
+                      at index: Int = 0) {
+            
             let response = HTTPURLResponse(
                 url: requestedURLs[index],
                 statusCode: statusCode,
