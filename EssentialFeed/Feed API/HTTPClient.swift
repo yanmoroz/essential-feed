@@ -8,10 +8,7 @@
 import Foundation
 
 public protocol HTTPClient {
-    
-    typealias Completion = (Result<(Data, HTTPURLResponse), Error>) -> Void
-    
     func get(from url : URL,
-             completion: @escaping Completion
+             completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void
     )
 }
