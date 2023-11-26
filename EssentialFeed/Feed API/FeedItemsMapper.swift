@@ -39,11 +39,6 @@ private struct Item: Decodable {
     let image: URL
     
     var item: FeedItem {
-        FeedItem(
-            id: id,
-            description: description,
-            location: location,
-            imageURL: image
-        )
+        FeedItem(id: id, description: description, location: location, imageURL: image)
     }
 }

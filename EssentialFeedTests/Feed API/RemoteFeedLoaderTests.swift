@@ -134,7 +134,11 @@ class RemoteFeedLoaderTests: XCTestCase {
                                      file: StaticString = #file,
                                      line: UInt = #line) {
         addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+            XCTAssertNil(
+                instance, "Instance should have been deallocated. Potential memory leak.",
+                file: file,
+                line: line
+            )
         }
     }
     
@@ -176,7 +180,6 @@ class RemoteFeedLoaderTests: XCTestCase {
                         when action: () -> Void,
                         file: StaticString = #file,
                         line: UInt = #line) {
-        
         let expectation = expectation(description: "Wait for load completion")
         
         sut.load { receivedResult in
@@ -195,7 +198,6 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
         
         action()
-        
         wait(for: [expectation], timeout: 1.0)
     }
     
@@ -207,22 +209,15 @@ class RemoteFeedLoaderTests: XCTestCase {
             return messages.map { $0.url }
         }
         
-        func get(from url : URL,
-                 completion: @escaping (HTTPClientResult) -> Void) {
-            
+        func get(from url : URL, completion: @escaping (HTTPClientResult) -> Void) {
             messages.append((url, completion))
         }
         
-        func complete(with error: Error,
-                      at index: Int = 0) {
-            
+        func complete(with error: Error, at index: Int = 0) {
             messages[index].completion(.failure(error))
         }
         
-        func complete(withStatusCode statusCode: Int,
-                      data: Data,
-                      at index: Int = 0) {
-            
+        func complete(withStatusCode statusCode: Int, data: Data, at index: Int = 0) {
             let response = HTTPURLResponse(
                 url: requestedURLs[index],
                 statusCode: statusCode,
