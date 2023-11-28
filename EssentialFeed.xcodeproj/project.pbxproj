@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		A363B9A52B166B9A001E71CF /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A363B9A72B166B9A001E71CF /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		A363B9B02B168218001E71CF /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		A37D9CEA2B0D6220003EF8A8 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37D9CF22B0D6220003EF8A8 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37D9D022B0D6244003EF8A8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		A37D9CE02B0D6220003EF8A8 = {
 			isa = PBXGroup;
 			children = (
+				A363B9B02B168218001E71CF /* CI.xctestplan */,
 				A3986CE22B153EAB0086570A /* EssentialFeed.xctestplan */,
 				A37D9CEC2B0D6220003EF8A8 /* EssentialFeed */,
 				A363B9A62B166B9A001E71CF /* EssentialFeedAPIEndToEndTests */,
