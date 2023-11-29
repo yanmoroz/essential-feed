@@ -111,7 +111,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     // MARK: - Helpers
     
     private typealias SUT = (sut: RemoteFeedLoader, client: HTTPClientSpy)
-    private typealias Item = (model: FeedItem, json: [String: Any])
+    private typealias Item = (model: FeedImage, json: [String: Any])
     
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!,
                          file: StaticString = #file,
@@ -135,11 +135,11 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
                           location: String? = nil,
                           imageURL: URL) -> Item {
         
-        let item = FeedItem(
+        let item = FeedImage(
             id: id,
             description: description,
             location: location,
-            imageURL: imageURL
+            url: imageURL
         )
         
         let minifiedJSON = {
