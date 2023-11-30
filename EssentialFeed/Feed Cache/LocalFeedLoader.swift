@@ -60,7 +60,6 @@ public final class LocalFeedLoader {
             switch result {
             case .failure:
                 self.store.deleteCachedFeed { _ in }
-                
             default:
                 break
             }
