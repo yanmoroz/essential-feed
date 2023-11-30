@@ -10,7 +10,6 @@ import EssentialFeed
 
 class CodableFeedStore {
     func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
-//        completion(.failure(anyNSError()))
         completion(.empty)
     }
 }
@@ -29,6 +28,26 @@ final class CodableFeedStoreTests: XCTestCase {
                 XCTFail("Expected empty result, got result: \(result) instead")
             }
             exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_retrieve_hasNoSideEffectsOnEmptyCache() {
+        let sut = CodableFeedStore()
+        
+        let exp = expectation(description: "Waiting for cache retrieval")
+        
+        sut.retrieve { firstResult in
+            sut.retrieve { secondResult in
+                switch (firstResult, secondResult) {
+                case (.empty, .empty):
+                    break
+                default:
+                    XCTFail("Expected retrieving twice from empty cache to deliver same empty result, got results: \(firstResult) and \(secondResult) instead")
+                }
+                exp.fulfill()
+            }
         }
         
         wait(for: [exp], timeout: 1.0)
