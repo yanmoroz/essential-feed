@@ -48,7 +48,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
         
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
+        assertThatRetrieveDeliversErrorOnRetrievalError(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnFailure() {
@@ -57,7 +57,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
         
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
+        assertThatRetrieveHasNoSideEffectsOnRetrievalError(on: sut)
     }
     
     func test_insert_deliversNoErrorOnEmptyCache() {
@@ -113,18 +113,14 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
         let noDeletePermissionURL = cachesDirectory()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
         
-        let deletionError = deleteCache(from: sut)
-        
-        XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
+        assertThatDeleteDeliversErrorOnDeletionError(on: sut)
     }
     
     func test_delete_hasNoSideEffectsOnDeletionError() {
         let noDeletePermissionURL = cachesDirectory()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
         
-        deleteCache(from: sut)
-        
-        expect(sut, toRetrieve: .empty)
+        assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
     }
     
     func test_storeSideEffects_runSerially() {
