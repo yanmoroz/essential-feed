@@ -12,7 +12,7 @@
 		A38863EC2B2078DE00EBFC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A38863EA2B2078DE00EBFC85 /* Main.storyboard */; };
 		A38863EE2B2078DE00EBFC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38863ED2B2078DE00EBFC85 /* Assets.xcassets */; };
 		A38863F12B2078DE00EBFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A38863EF2B2078DE00EBFC85 /* LaunchScreen.storyboard */; };
-		A3DC4BCD2B20984300AB36B6 /* ViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC4BCC2B20984300AB36B6 /* ViewControllerTableViewController.swift */; };
+		A3DC4BCD2B20984300AB36B6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		A38863ED2B2078DE00EBFC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A38863F02B2078DE00EBFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A38863F22B2078DE00EBFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3DC4BCC2B20984300AB36B6 /* ViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				A38863ED2B2078DE00EBFC85 /* Assets.xcassets */,
 				A38863EF2B2078DE00EBFC85 /* LaunchScreen.storyboard */,
 				A38863F22B2078DE00EBFC85 /* Info.plist */,
-				A3DC4BCC2B20984300AB36B6 /* ViewControllerTableViewController.swift */,
+				A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A38863E52B2078DE00EBFC85 /* AppDelegate.swift in Sources */,
-				A3DC4BCD2B20984300AB36B6 /* ViewControllerTableViewController.swift in Sources */,
+				A3DC4BCD2B20984300AB36B6 /* FeedViewController.swift in Sources */,
 				A38863E72B2078DE00EBFC85 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
