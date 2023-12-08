@@ -62,13 +62,13 @@
 			children = (
 				A38863F22B2078DE00EBFC85 /* Info.plist */,
 				A38863E42B2078DE00EBFC85 /* AppDelegate.swift */,
+				A3CD2BE92B235C6300481164 /* FeedImageCell.swift */,
 				A3CD2BE72B2358A500481164 /* FeedImageViewModel+PrototypeData.swift */,
 				A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */,
 				A38863E62B2078DE00EBFC85 /* SceneDelegate.swift */,
 				A38863ED2B2078DE00EBFC85 /* Assets.xcassets */,
 				A38863EF2B2078DE00EBFC85 /* LaunchScreen.storyboard */,
 				A38863EA2B2078DE00EBFC85 /* Main.storyboard */,
-				A3CD2BE92B235C6300481164 /* FeedImageCell.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
