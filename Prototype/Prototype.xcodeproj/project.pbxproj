@@ -13,6 +13,7 @@
 		A38863EE2B2078DE00EBFC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38863ED2B2078DE00EBFC85 /* Assets.xcassets */; };
 		A38863F12B2078DE00EBFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A38863EF2B2078DE00EBFC85 /* LaunchScreen.storyboard */; };
 		A3CD2BE82B2358A500481164 /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD2BE72B2358A500481164 /* FeedImageViewModel+PrototypeData.swift */; };
+		A3CD2BEA2B235C6300481164 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD2BE92B235C6300481164 /* FeedImageCell.swift */; };
 		A3DC4BCD2B20984300AB36B6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		A38863F02B2078DE00EBFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A38863F22B2078DE00EBFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3CD2BE72B2358A500481164 /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
+		A3CD2BE92B235C6300481164 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		A3DC4BCC2B20984300AB36B6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				A38863ED2B2078DE00EBFC85 /* Assets.xcassets */,
 				A38863EF2B2078DE00EBFC85 /* LaunchScreen.storyboard */,
 				A38863EA2B2078DE00EBFC85 /* Main.storyboard */,
+				A3CD2BE92B235C6300481164 /* FeedImageCell.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				A3DC4BCD2B20984300AB36B6 /* FeedViewController.swift in Sources */,
 				A38863E72B2078DE00EBFC85 /* SceneDelegate.swift in Sources */,
 				A3CD2BE82B2358A500481164 /* FeedImageViewModel+PrototypeData.swift in Sources */,
+				A3CD2BEA2B235C6300481164 /* FeedImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
