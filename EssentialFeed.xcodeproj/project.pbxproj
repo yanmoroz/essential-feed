@@ -49,6 +49,8 @@
 		A3FDB0212B17E56E003129DA /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDB0202B17E56E003129DA /* RemoteFeedItem.swift */; };
 		A3FDB0232B17F354003129DA /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDB0222B17F354003129DA /* LoadFeedFromCacheUseCaseTests.swift */; };
 		A3FDB0262B17F616003129DA /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDB0252B17F616003129DA /* FeedStoreSpy.swift */; };
+		A3FDCC4E2B28D5AA0057E1C4 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3986CDE2B12DA0A0086570A /* XCTestCase+MemoryLeakTracking.swift */; };
+		A3FDCC502B28F46F0057E1C4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDCC4F2B28F46F0057E1C4 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,7 @@
 		A3FDB0252B17F616003129DA /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		A3FDCC462B2376530057E1C4 /* EssentialFeediOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOS.xctestplan; sourceTree = "<group>"; };
 		A3FDCC472B2376820057E1C4 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
+		A3FDCC4F2B28F46F0057E1C4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +337,7 @@
 		A3CD2C1C2B23742D00481164 /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
+				A3FDCC4F2B28F46F0057E1C4 /* FeedViewController.swift */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
@@ -521,6 +525,7 @@
 					};
 					A3CD2C1A2B23742D00481164 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					A3CD2C212B23742E00481164 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -665,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FDCC502B28F46F0057E1C4 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CD2C282B23742E00481164 /* FeedViewControllerTests.swift in Sources */,
+				A3FDCC4E2B28D5AA0057E1C4 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1005,7 @@
 		A3CD2C2B2B23742E00481164 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1022,7 +1030,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yanmoroz.EssentialFeediOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1030,6 +1040,7 @@
 		A3CD2C2C2B23742E00481164 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1054,6 +1065,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yanmoroz.EssentialFeediOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1062,6 +1074,7 @@
 		A3CD2C2E2B23742E00481164 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NF5X2BH93G;
@@ -1070,6 +1083,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yanmoroz.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1078,6 +1092,7 @@
 		A3CD2C2F2B23742E00481164 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NF5X2BH93G;
@@ -1086,6 +1101,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yanmoroz.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
